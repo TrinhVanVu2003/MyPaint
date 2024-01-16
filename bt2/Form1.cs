@@ -42,10 +42,24 @@ namespace bt2
         private void mainPanel_MouseUp(object sender, MouseEventArgs e)
         {
             int penWidth = (int)inpPenWidth.Value;
-            Color fillColor = cdFillColor.Color;  // Lấy màu fill đã chọn
+            Color fillColor = cdFillColor.Color;  
             Color penColor = cdPenColor.Color;
-            MyRectangle rect = new MyRectangle(_sPoint, e.Location, penWidth, penColor, fillColor); // Truyền màu fill vào MyRectangle
-            _rectangles.AddLast(rect);
+
+
+            if (rbFillColor.Checked)
+            {
+                MyRectangle rect = new MyRectangle(_sPoint, e.Location, penWidth, penColor, fillColor);
+                _rectangles.AddLast(rect);
+            }
+            else if (rbNoColor.Checked)
+            {
+                MyRectangle rect = new MyRectangle(_sPoint, e.Location, penWidth, penColor);
+                _rectangles.AddLast(rect);
+            }
+            else if (rbPatternColor.Checked)
+            {
+
+            }
             _sPoint.X = -1;
             _sPoint.Y = -1;
             _moving = false;
@@ -100,6 +114,37 @@ namespace bt2
             {
 
             }
+        }
+
+        private void RefreshForm()
+        {
+            _rectangles.Clear();
+            RefreshPanel();
+        }
+
+        private void RadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            // Xử lý sự kiện khi RadioButton thay đổi
+            RefreshPanel();
+        }
+        private void txtNetVe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChoseColor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshForm();
         }
     }
 }

@@ -11,6 +11,10 @@ namespace bt2
 {
     internal class MyRectangle
     {
+        private Point sPoint;
+        private int penWidth;
+        private Color penColor;
+
         public int width { get; set; }
         public int height { get; set; }
         public Point location { get; set; }
@@ -28,6 +32,15 @@ namespace bt2
             FillColor = fillColor;
         }
         public MyRectangle() { }
+
+        public MyRectangle(Point sPoint, Point location, int penWidth, Color penColor)
+        {
+            this.sPoint = sPoint;
+            this.location = location;
+            this.penWidth = penWidth;
+            this.penColor = penColor;
+        }
+
         public void Draw(Graphics g)
         {
             Pen pen = new Pen(BorderColor, BorderWidth);
@@ -36,8 +49,14 @@ namespace bt2
         }
         public void ToMau(Color color, Graphics g)
         {
-            SolidBrush brush = new SolidBrush(color);
-            g.FillRectangle(brush, location.X, location.Y, width, height);
+            if (FillColor != Color.Empty) // Kiểm tra màu fill có khác Color.Empty không
+            {
+                SolidBrush brush = new SolidBrush(FillColor);
+                g.FillRectangle(brush, location.X, location.Y, width, height);
+                brush.Dispose();
+            }
+            // Không làm gì nếu FillColor là Color.Empty (no fill)
         }
+
     }
 }
