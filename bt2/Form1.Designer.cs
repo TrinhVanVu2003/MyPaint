@@ -43,9 +43,13 @@
             this.rbFillColor = new System.Windows.Forms.RadioButton();
             this.rbNoColor = new System.Windows.Forms.RadioButton();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rdbRectangle = new System.Windows.Forms.RadioButton();
+            this.rdbCircle = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.inpPenWidth)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -149,7 +153,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(811, 184);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(228, 217);
+            this.groupBox2.Size = new System.Drawing.Size(228, 173);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nét vẽ";
@@ -193,7 +197,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(811, 407);
+            this.btnRefresh.Location = new System.Drawing.Point(811, 514);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(228, 31);
             this.btnRefresh.TabIndex = 11;
@@ -201,11 +205,46 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rdbCircle);
+            this.groupBox3.Controls.Add(this.rdbRectangle);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(811, 375);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(228, 111);
+            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Hình";
+            // 
+            // rdbRectangle
+            // 
+            this.rdbRectangle.AutoSize = true;
+            this.rdbRectangle.Location = new System.Drawing.Point(22, 29);
+            this.rdbRectangle.Name = "rdbRectangle";
+            this.rdbRectangle.Size = new System.Drawing.Size(153, 29);
+            this.rdbRectangle.TabIndex = 2;
+            this.rdbRectangle.TabStop = true;
+            this.rdbRectangle.Text = "Hình chữ nhật";
+            this.rdbRectangle.UseVisualStyleBackColor = true;
+            // 
+            // rdbCircle
+            // 
+            this.rdbCircle.AutoSize = true;
+            this.rdbCircle.Location = new System.Drawing.Point(22, 64);
+            this.rdbCircle.Name = "rdbCircle";
+            this.rdbCircle.Size = new System.Drawing.Size(111, 29);
+            this.rdbCircle.TabIndex = 3;
+            this.rdbCircle.TabStop = true;
+            this.rdbCircle.Text = "Hình tròn";
+            this.rdbCircle.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 567);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.groupBox1);
@@ -219,6 +258,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -240,6 +281,9 @@
         private System.Windows.Forms.RadioButton rbFillColor;
         private System.Windows.Forms.RadioButton rbNoColor;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton rdbCircle;
+        private System.Windows.Forms.RadioButton rdbRectangle;
     }
 }
 

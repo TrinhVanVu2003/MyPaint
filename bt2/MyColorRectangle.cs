@@ -2,24 +2,21 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace bt2
 {
-    internal class MyRectangle : Shape
+    internal class MyColorRectangle : MyRectangle
     {
-        protected int width;
-        protected int height;
+        private SolidBrush brush;
 
-        public MyRectangle()
+        public MyColorRectangle()
         {
 
         }
 
-        public MyRectangle(Point sPoint, Point ePoint, int borderWidth, Color borderColor)
+        public MyColorRectangle(Point sPoint, Point ePoint, int borderWidth, Color borderColor, SolidBrush solidBrush)
         {
             this.borderWidth = borderWidth;
             this.borderColor = borderColor;
@@ -28,19 +25,15 @@ namespace bt2
             location = new Point(x, y);
             width = Math.Abs(sPoint.X - ePoint.X);
             height = Math.Abs(sPoint.Y - ePoint.Y);
+            this.brush = solidBrush;
         }
 
         public void Draw(Graphics g)
         {
             Pen pen = new Pen(borderColor, borderWidth);
-            g.DrawRectangle(pen, location.X, location.Y, width, height);
-        }
-        public void ToMau(Color color, Graphics g)
-        {
-            SolidBrush brush = new SolidBrush(color);
-            g.FillRectangle(brush, location.X, location.Y, width, height);
-            brush.Dispose();
 
+            g.FillRectangle(brush, location.X, location.Y, width, height);
+            g.DrawRectangle(pen, location.X, location.Y, width, height);
         }
     }
 }

@@ -58,9 +58,15 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyCircle.cs" />
+    <Compile Include="MyColorCircle.cs" />
+    <Compile Include="MyColorRectangle.cs" />
+    <Compile Include="MyPatternCircle.cs" />
+    <Compile Include="MyPatternRectangle.cs" />
     <Compile Include="MyRectangle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shape.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
